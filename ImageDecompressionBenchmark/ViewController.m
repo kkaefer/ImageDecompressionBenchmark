@@ -102,7 +102,7 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
     NSData *data = [NSData dataWithContentsOfFile: path];
     CFDataRef image = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, [data bytes], [data length], kCFAllocatorNull);
 
-    uint64_t duration = dispatch_benchmark(100, ^{
+    uint64_t duration = dispatch_benchmark(1000, ^{
         @autoreleasepool {
             [self decodeImage:image];
         }
@@ -116,7 +116,7 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
     NSData *data = [NSData dataWithContentsOfFile: path];
     CFDataRef image = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, [data bytes], [data length], kCFAllocatorNull);
 
-    uint64_t duration = dispatch_benchmark(100, ^{
+    uint64_t duration = dispatch_benchmark(1000, ^{
         @autoreleasepool {
             [self decodeImage:image];
         }
@@ -130,7 +130,7 @@ extern uint64_t dispatch_benchmark(size_t count, void (^block)(void));
     NSData *data = [NSData dataWithContentsOfFile: path];
     CFDataRef image = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, [data bytes], [data length], kCFAllocatorNull);
 
-    uint64_t duration = dispatch_benchmark(100, ^{
+    uint64_t duration = dispatch_benchmark(1000, ^{
         @autoreleasepool {
             [self decodeWebP:image];
         }
